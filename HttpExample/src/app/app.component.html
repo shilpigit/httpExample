@@ -3,6 +3,15 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <service-call-subscribe></service-call-subscribe>
+  <!-- <service-call-subscribe></service-call-subscribe> -->
+  <ul>
+    <li> <a routerLink="behaviour">Behaviour Subject</a></li>
+    <li> <a [routerLink]="['subject']" routerLinkActive="router-link-active">Click Simple Subject!!!! </a></li>
+    <li><a [routerLink]="['passparam']" routerLinkActive="router-link-active">Using Param!!!</a></li>
+  </ul>
+ 
+  <!-- <a routerLink="subject">Simple Subject</a> -->
+ 
+  
 
 <router-outlet></router-outlet>

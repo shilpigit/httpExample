@@ -1,0 +1,26 @@
+<div>
+  <input type="search"
+  class="form-control"
+  placeholder="Enter search string" value={{id}}
+  #search>
+  
+  <button type="button"
+  class="btn btn-primary"
+  (click)="onSearch(search.value)">
+  Search
+  </button>
+  </div>
+  
+  
+  <div *ngFor="let item of body">
+    <table>
+      <tbody>
+        <th>ID</th>
+        <th>Content</th>
+      </tbody>
+      <tr><td> {{item.id}}</td>
+        <td> {{item.body}}</td>
+      </tr>
+    </table>
+   
+  </div>

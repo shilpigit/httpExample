@@ -11,6 +11,11 @@ export class HttpCallServiceBySubscriberService {
 
   constructor(private _httpBehaviorCall: HttpClient) { }
 
+  getTitlesByNormalsubscribercall()
+  {
+    return this._httpBehaviorCall.get('https://jsonplaceholder.typicode.com/posts');
+  }
+
   setList(input: any)
   {
     this._behavioursub.next(input);

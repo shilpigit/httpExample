@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpCallService } from '../services/http-call.service';
+import {Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'service-call-subscribe',
@@ -9,13 +10,21 @@ import { HttpCallService } from '../services/http-call.service';
 export class ServiceCallSubscribeComponent implements OnInit {
 
   public title : any = [];
-
-  constructor(private _httpCallService : HttpCallService) { }
+  
+  constructor(private _httpCallService : HttpCallService, private route: Router, private router: ActivatedRoute) { }
 
   ngOnInit() {
+    
     this._httpCallService.getTitlesByNormalsubscribercall().subscribe((data)=> {
       this.title = data
     })
+  
   }
 
+  activatedLink(id){
+    debugger
+    this.route.navigate(['../activateUrl', id], { relativeTo: this.router});
+  }
+
+ 
 }
