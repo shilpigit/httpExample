@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpCallServiceBySubscriberService } from '../services/http-call-service-by-subscriber.service';
 
 @Component({
   selector: 'app-behaviour-sub-calling',
@@ -7,12 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BehaviourSubCallingComponent implements OnInit {
 
-  constructor() { }
+  public observable: any=[];
+  public idn: number;
+
+  constructor(private _httpCallservice: HttpCallServiceBySubscriberService) { }
 
   ngOnInit() {
   }
 
-  display()
-  {alert('Shilpi');}
+  display(id: number)
+  {
+    debugger
+    alert(id);
+    this._httpCallservice.getTitlesByNormalsubscribercall().subscribe((data)=>{
+    this._httpCallservice.setList(1)
+    })
+  }
 
 }

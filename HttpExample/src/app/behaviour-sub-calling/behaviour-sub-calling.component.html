@@ -1,4 +1,8 @@
 <h2>
   behaviour-sub-calling works!
 </h2>
-<button (click)= display()>Click Me For Result!!!!!</button>
+<input #textbox type="text" [(ngModel)]="idn" />
+<button (click)= display(textbox.value)>Click Me For Result!!!!!</button>
+<div *ngFor="let item of observable">
+  {{item.body}}
+</div>
