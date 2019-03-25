@@ -17,12 +17,16 @@ export class ServiceCallSubscribeComponent implements OnInit {
     
     this._httpCallService.getTitlesByNormalsubscribercall().subscribe((data)=> {
       this.title = data
+    }, error => {
+
+    }, () => {
+              console.log('This denote complete option.')
     })
   
   }
 
-  activatedLink(id){
-    debugger
+  activatedLink(id){    
+    
     this.route.navigate(['../activateUrl', id], { relativeTo: this.router});
   }
 
